@@ -5,6 +5,7 @@
   <title>Pomodoro com Rotinas</title>
   <style>
   /* Estilo base */
+* /* Estilo base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,23 +36,23 @@ body {
 
 .card {
   background-color: burlywood;
-  border-radius: 10px;
-  padding: 40px; /* Aumentado para mais espaço interno */
-  max-width: 700px; /* Aumentado para telas maiores */
+  border-radius: 15px; /* Bordas mais arredondadas */
+  padding: 50px; /* Mais espaço interno */
+  max-width: 800px; /* Aumentado para telas maiores */
   width: 100%;
   margin: auto;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra mais visível */
 }
 
 input,
 button,
 select {
   width: 100%;
-  padding: 15px; /* Aumentado para maior área clicável */
-  margin-top: 15px; /* Aumentado para mais espaçamento */
+  padding: 20px; /* Aumentado para maior área clicável */
+  margin-top: 20px; /* Mais espaçamento entre os elementos */
   border: 1px solid #ccc;
-  border-radius: 8px; /* Bordas mais arredondadas */
-  font-size: 18px; /* Fonte maior */
+  border-radius: 10px; /* Bordas mais arredondadas */
+  font-size: 20px; /* Fonte maior */
 }
 
 input:focus,
@@ -66,9 +67,9 @@ select:focus {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 18px; /* Fonte maior */
-  border-radius: 8px;
-  padding: 15px; /* Aumentado para mais área clicável */
+  font-size: 20px; /* Fonte maior */
+  border-radius: 10px;
+  padding: 20px; /* Mais área clicável */
 }
 
 .submit-btn:hover {
@@ -80,13 +81,13 @@ select:focus {
 }
 
 .formulario h1 {
-  font-size: 28px; /* Aumentado para maior destaque */
-  margin-bottom: 25px;
+  font-size: 32px; /* Aumentado para maior destaque */
+  margin-bottom: 30px;
 }
 
 .formulario p {
-  margin-top: 20px;
-  font-size: 16px; /* Fonte maior */
+  margin-top: 25px;
+  font-size: 18px; /* Fonte maior */
 }
 
 .formulario a {
@@ -105,19 +106,19 @@ select:focus {
 
 h2 {
   text-align: center;
-  font-size: 26px; /* Aumentado para maior destaque */
+  font-size: 30px; /* Aumentado para maior destaque */
 }
 
 #progresso {
   text-align: center;
-  font-size: 20px; /* Aumentado para melhor visibilidade */
-  margin-top: 25px;
+  font-size: 24px; /* Aumentado para melhor visibilidade */
+  margin-top: 30px;
 }
 
 .timer {
-  font-size: 100px; /* Aumentado para maior destaque */
+  font-size: 120px; /* Aumentado para maior destaque */
   text-align: center;
-  margin: 50px 0;
+  margin: 60px 0;
   font-weight: bold;
   color: black;
 }
@@ -125,54 +126,54 @@ h2 {
 /* Responsividade para tablets */
 @media (max-width: 768px) {
   body {
-    padding: 15px;
+    padding: 20px;
   }
 
   .card {
-    padding: 30px;
+    padding: 40px;
     max-width: 90%;
   }
 
   input,
   button,
   select {
-    padding: 12px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 18px;
   }
 
   .formulario h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .timer {
-    font-size: 80px;
+    font-size: 100px;
   }
 }
 
 /* Responsividade para smartphones */
 @media (max-width: 480px) {
   .card {
-    padding: 20px;
+    padding: 30px;
     max-width: 100%;
   }
 
   input,
   button,
   select {
-    padding: 12px;
-    font-size: 16px;
+    padding: 16px;
+    font-size: 18px;
   }
 
   .formulario h1 {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .formulario p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .timer {
-    font-size: 70px;
+    font-size: 90px;
   }
 }
   </style>
