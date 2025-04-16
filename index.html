@@ -6,55 +6,90 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+  
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
       margin: 0;
       padding: 20px;
+      background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*lAoXzLYaHoONaw4yG91fqA.jpeg);
     }
+  
     .tela {
       display: none;
     }
+  
     .ativa {
       display: block;
     }
+  
     .card {
-      background: #fff;
+      background-color: burlywood;
       border-radius: 10px;
       padding: 20px;
       max-width: 400px;
       margin: auto;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+  
     input,
     button,
     select {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
     }
-    .timer {
-      font-size: 48px;
-      text-align: center;
-      margin: 20px 0;
+  
+    input:focus,
+    button:focus,
+    select:focus {
+      outline: none;
+      border-color: brown;
     }
-    h2,
-    p {
-      text-align: center;
-    }
-    .formulario {
-      text-align: center;
-    }
+  
     .submit-btn {
-      background-color: #007bff;
+      background-color: brown;
       color: white;
       border: none;
       cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      padding: 10px;
     }
+  
     .submit-btn:hover {
-      background-color: #0056b3;
+      background-color: brown;
     }
+  
+    .formulario {
+      text-align: center;
+    }
+  
+    .formulario h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .formulario p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  
+    .formulario a {
+      color: brown;
+      text-decoration: none;
+    }
+  
+    .formulario a:hover {
+      text-decoration: underline;
+    }
+  
     .logo img {
       max-width: 100%;
       height: auto;
@@ -65,18 +100,21 @@
       body {
         padding: 10px;
       }
+  
       .card {
         padding: 15px;
         max-width: 90%;
       }
-      .timer {
-        font-size: 36px;
-      }
+  
       input,
       button,
       select {
         padding: 8px;
         font-size: 14px;
+      }
+  
+      .formulario h1 {
+        font-size: 20px;
       }
     }
   
@@ -84,19 +122,31 @@
       .card {
         padding: 10px;
       }
-      .timer {
-        font-size: 28px;
-      }
+  
       input,
       button,
       select {
         padding: 6px;
         font-size: 12px;
       }
-      h2,
-      p {
-        font-size: 14px;
+  
+      .formulario h1 {
+        font-size: 18px;
       }
+  
+      .formulario p {
+        font-size: 12px;
+      }
+    }
+
+    h2{
+      text-align: center;
+    }
+
+    #progresso{
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -108,9 +158,9 @@
       <h1>Login</h1>
       <form id="loginForm">
         <label for="username">Nome:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <input type="text" id="username" name="username" placeholder="Nome de usuario:" required><br><br>
         <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required><br><br>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha:" required><br><br>
         <button type="submit" class="submit-btn">Login</button>
       </form>
       <p>Não tem uma conta? <a href="#" onclick="mostrar('cadastro')">Cadastre-se</a></p>
@@ -119,30 +169,30 @@
 
   <!-- Tela de Cadastro -->
   <div id="cadastro" class="tela card">
-    <div class="logo">
-      <img src="../assets/img/ROTINA E LEITURAS.png" alt="Logo" class="logo">
+    <div class="formulario"><h1>Cadastro</h1>
+      <form id="cadastroForm">
+        <label for="username">Nome:</label>
+        <input type="text" id="usernameCadastro" name="username" placeholder="Digite seu nome de usuario:" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="emailCadastro" name="email" placeholder="Digite seu email:" required><br><br>
+        <label for="password">Senha:</label>
+        <input type="password" id="passwordCadastro" name="password" placeholder="Digite sua senha:" required><br><br>
+        <button type="submit" class="submit-btn">Cadastrar</button>
+      </form>
+      <p>Já tem uma conta? <a href="#" onclick="mostrar('login')">Faça login</a></p>
     </div>
-    <h1>Cadastro</h1>
-    <form id="cadastroForm">
-      <label for="username">Nome:</label>
-      <input type="text" id="usernameCadastro" name="username" required><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="emailCadastro" name="email" required><br><br>
-      <label for="password">Senha:</label>
-      <input type="password" id="passwordCadastro" name="password" required><br><br>
-      <button type="submit" class="submit-btn">Cadastrar</button>
-    </form>
-    <p>Já tem uma conta? <a href="#" onclick="mostrar('login')">Faça login</a></p>
   </div>
+    
 
   <!-- Tela Inicial -->
   <div id="inicio" class="tela card">
     <h2>Minhas Rotinas</h2>
     <select id="seletorRotina"></select>
     <button onclick="iniciarRotina()">Iniciar rotina</button>
+    <br><br>
     <p id="progresso"></p>
     <hr>
-    <button onclick="mostrar('novaRotina')">+ Nova rotina</button>
+    <button onclick="mostrar('novaRotina')">Nova rotina</button>
   </div>
 
   <!-- Criar nova rotina -->
@@ -202,6 +252,8 @@
         seletor.appendChild(option);
       });
 
+      document.getElementById("seletorRotina").addEventListener("change", atualizarProgresso);
+
       atualizarProgresso();
     }
 
@@ -254,17 +306,22 @@
     }
 
     function atualizarProgresso() {
-      const seletor = document.getElementById("seletorRotina");
-      const index = seletor.value;
-      const rotinas = JSON.parse(localStorage.getItem("rotinas") || "[]");
+    const seletor = document.getElementById("seletorRotina");
+    const index = seletor.value;
+    const rotinas = JSON.parse(localStorage.getItem("rotinas") || "[]");
 
-      if (rotinas[index]) {
-        document.getElementById("progresso").textContent = `Progresso: ${rotinas[index].progresso}/30`;
-      } else {
-        document.getElementById("progresso").textContent = "";
-      }
+    // Limpa o progresso anterior
+    const progressoElemento = document.getElementById("progresso");
+    progressoElemento.textContent = ""; // Limpa o conteúdo anterior
+
+    // Atualiza o progresso da rotina selecionada
+    if (rotinas[index]) {
+      progressoElemento.textContent = `Progresso: ${rotinas[index].progresso}/30`;
+    } else {
+      progressoElemento.textContent = ""; // Caso nenhuma rotina seja selecionada
     }
-    
+  }
+      
     // Função para cadastrar um novo usuário
   document.getElementById("cadastroForm").addEventListener("submit", function (e) {
     e.preventDefault();
