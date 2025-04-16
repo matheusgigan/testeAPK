@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Pomodoro com Rotinas</title>
   <style>
+    /* Estilo base */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,6 +14,10 @@
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       margin: 0;
       padding: 20px;
       background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*lAoXzLYaHoONaw4yG91fqA.jpeg);
@@ -29,8 +34,9 @@
     .card {
       background-color: burlywood;
       border-radius: 10px;
-      padding: 20px;
-      max-width: 400px;
+      padding: 30px; /* Ajustado para maior espaçamento */
+      max-width: 600px;
+      width: 100%; /* Garante que ocupe toda a largura disponível */
       margin: auto;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -64,7 +70,7 @@
     }
   
     .submit-btn:hover {
-      background-color: brown;
+      background-color: darkred;
     }
   
     .formulario {
@@ -95,15 +101,33 @@
       height: auto;
     }
   
-    /* Responsividade */
+    h2 {
+      text-align: center;
+    }
+  
+    #progresso {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  
+    .timer {
+      font-size: 80px;
+      text-align: center;
+      margin: 40px 0;
+      font-weight: bold;
+      color: black;
+    }
+  
+    /* Responsividade para tablets */
     @media (max-width: 768px) {
       body {
         padding: 10px;
       }
   
       .card {
-        padding: 15px;
-        max-width: 90%;
+        padding: 20px; /* Reduz o padding */
+        max-width: 90%; /* Ajusta a largura máxima */
       }
   
       input,
@@ -118,9 +142,11 @@
       }
     }
   
+    /* Responsividade para smartphones */
     @media (max-width: 480px) {
       .card {
-        padding: 10px;
+        padding: 15px; /* Reduz ainda mais o padding */
+        max-width: 100%; /* Garante que ocupe toda a largura */
       }
   
       input,
@@ -137,25 +163,11 @@
       .formulario p {
         font-size: 12px;
       }
+  
+      .timer {
+        font-size: 60px; /* Reduz o tamanho do timer */
+      }
     }
-
-    h2{
-      text-align: center;
-    }
-
-    #progresso{
-      text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-
-    .timer {
-    font-size: 80px; /* Aumenta o tamanho da fonte */
-    text-align: center; /* Centraliza o texto */
-    margin: 40px 0; /* Adiciona espaço acima e abaixo */
-    font-weight: bold; /* Deixa o texto mais destacado */
-    color: black; /* Adiciona uma cor para combinar com o tema */
-  }
   </style>
 </head>
 <body>
