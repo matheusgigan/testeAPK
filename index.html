@@ -5,169 +5,171 @@
   <title>Pomodoro com Rotinas</title>
   <style>
     /* Estilo base */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-  
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      padding: 20px;
-      background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*lAoXzLYaHoONaw4yG91fqA.jpeg);
-    }
-  
-    .tela {
-      display: none;
-    }
-  
-    .ativa {
-      display: block;
-    }
-  
-    .card {
-      background-color: burlywood;
-      border-radius: 10px;
-      padding: 30px; /* Ajustado para maior espaçamento */
-      max-width: 600px;
-      width: 100%; /* Garante que ocupe toda a largura disponível */
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  
-    input,
-    button,
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-  
-    input:focus,
-    button:focus,
-    select:focus {
-      outline: none;
-      border-color: brown;
-    }
-  
-    .submit-btn {
-      background-color: brown;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
-      padding: 10px;
-    }
-  
-    .submit-btn:hover {
-      background-color: darkred;
-    }
-  
-    .formulario {
-      text-align: center;
-    }
-  
-    .formulario h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-  
-    .formulario p {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-  
-    .formulario a {
-      color: brown;
-      text-decoration: none;
-    }
-  
-    .formulario a:hover {
-      text-decoration: underline;
-    }
-  
-    .logo img {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    h2 {
-      text-align: center;
-    }
-  
-    #progresso {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-  
-    .timer {
-      font-size: 80px;
-      text-align: center;
-      margin: 40px 0;
-      font-weight: bold;
-      color: black;
-    }
-  
-    /* Responsividade para tablets */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-  
-      .card {
-        padding: 20px; /* Reduz o padding */
-        max-width: 90%; /* Ajusta a largura máxima */
-      }
-  
-      input,
-      button,
-      select {
-        padding: 8px;
-        font-size: 14px;
-      }
-  
-      .formulario h1 {
-        font-size: 20px;
-      }
-    }
-  
-    /* Responsividade para smartphones */
-    @media (max-width: 480px) {
-      .card {
-        padding: 15px; /* Reduz ainda mais o padding */
-        max-width: 100%; /* Garante que ocupe toda a largura */
-      }
-  
-      input,
-      button,
-      select {
-        padding: 6px;
-        font-size: 12px;
-      }
-  
-      .formulario h1 {
-        font-size: 18px;
-      }
-  
-      .formulario p {
-        font-size: 12px;
-      }
-  
-      .timer {
-        font-size: 60px; /* Reduz o tamanho do timer */
-      }
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
+  margin: 0;
+  padding: 20px;
+  background-image: url(https://miro.medium.com/v2/resize:fit:2000/1*lAoXzLYaHoONaw4yG91fqA.jpeg);
+  background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+  background-position: center;
+}
+
+.tela {
+  display: none;
+}
+
+.ativa {
+  display: block;
+}
+
+.card {
+  background-color: burlywood;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+button,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: none;
+  border-color: brown;
+}
+
+.submit-btn {
+  background-color: brown;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.submit-btn:hover {
+  background-color: darkred;
+}
+
+.formulario {
+  text-align: center;
+}
+
+.formulario h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formulario p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.formulario a {
+  color: brown;
+  text-decoration: none;
+}
+
+.formulario a:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+#progresso {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.timer {
+  font-size: 80px;
+  text-align: center;
+  margin: 40px 0;
+  font-weight: bold;
+  color: black;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  input,
+  button,
+  select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .formulario h1 {
+    font-size: 20px;
+  }
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .formulario h1 {
+    font-size: 18px;
+  }
+
+  .formulario p {
+    font-size: 12px;
+  }
+
+  .timer {
+    font-size: 60px;
+  }
+}
   </style>
 </head>
 <body>
