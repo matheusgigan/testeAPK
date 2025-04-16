@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Pomodoro com Rotinas</title>
   <style>
-    /* Estilo base */
+  /* Estilo base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,22 +36,22 @@ body {
 .card {
   background-color: burlywood;
   border-radius: 10px;
-  padding: 30px;
-  max-width: 600px;
+  padding: 40px; /* Aumentado para mais espaço interno */
+  max-width: 700px; /* Aumentado para telas maiores */
   width: 100%;
   margin: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
 }
 
 input,
 button,
 select {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px; /* Aumentado para maior área clicável */
+  margin-top: 15px; /* Aumentado para mais espaçamento */
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 8px; /* Bordas mais arredondadas */
+  font-size: 18px; /* Fonte maior */
 }
 
 input:focus,
@@ -66,9 +66,9 @@ select:focus {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  padding: 10px;
+  font-size: 18px; /* Fonte maior */
+  border-radius: 8px;
+  padding: 15px; /* Aumentado para mais área clicável */
 }
 
 .submit-btn:hover {
@@ -80,13 +80,13 @@ select:focus {
 }
 
 .formulario h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 28px; /* Aumentado para maior destaque */
+  margin-bottom: 25px;
 }
 
 .formulario p {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 16px; /* Fonte maior */
 }
 
 .formulario a {
@@ -105,18 +105,19 @@ select:focus {
 
 h2 {
   text-align: center;
+  font-size: 26px; /* Aumentado para maior destaque */
 }
 
 #progresso {
   text-align: center;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 20px; /* Aumentado para melhor visibilidade */
+  margin-top: 25px;
 }
 
 .timer {
-  font-size: 80px;
+  font-size: 100px; /* Aumentado para maior destaque */
   text-align: center;
-  margin: 40px 0;
+  margin: 50px 0;
   font-weight: bold;
   color: black;
 }
@@ -124,50 +125,54 @@ h2 {
 /* Responsividade para tablets */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 15px;
   }
 
   .card {
-    padding: 20px;
+    padding: 30px;
     max-width: 90%;
   }
 
   input,
   button,
   select {
-    padding: 8px;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 16px;
   }
 
   .formulario h1 {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  .timer {
+    font-size: 80px;
   }
 }
 
 /* Responsividade para smartphones */
 @media (max-width: 480px) {
   .card {
-    padding: 15px;
+    padding: 20px;
     max-width: 100%;
   }
 
   input,
   button,
   select {
-    padding: 10px;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 16px;
   }
 
   .formulario h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .formulario p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .timer {
-    font-size: 60px;
+    font-size: 70px;
   }
 }
   </style>
